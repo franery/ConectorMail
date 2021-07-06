@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension-documentation>
+    <configs>
+        <config name="config">
+            <description><![CDATA[Default configuration]]></description>
+            <parameters>
+                <parameter name="expirationPolicy">
+                    <description><![CDATA[Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.]]></description>
+                </parameter>
+            </parameters>
+        </config>
+    </configs>
+    <connections>
+        <connection name="connection">
+            <description><![CDATA[This class (as it's name implies) provides connection instances and the funcionality to disconnect and validate those connections. <p> All connection related parameters (values required in order to create a connection) must be declared in the connection providers. <p> This particular example is a PoolingConnectionProvider which declares that connections resolved by this provider will be pooled and reused. There are other implementations like CachedConnectionProvider which lazily creates and caches connections or simply ConnectionProvider if you want a new connection each time something requires one.]]></description>
+            <parameters>
+                <parameter name="host">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="user">
+                    <description><![CDATA[Username used to connect with the mail server.]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[Username password to connect with the mail server.]]></description>
+                </parameter>
+                <parameter name="port">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+                <parameter name="poolingProfile">
+                    <description><![CDATA[Characteristics of the connection pool]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+        <connection name="connection">
+            <description><![CDATA[This class (as it's name implies) provides connection instances and the funcionality to disconnect and validate those connections. <p> All connection related parameters (values required in order to create a connection) must be declared in the connection providers. <p> This particular example is a PoolingConnectionProvider which declares that connections resolved by this provider will be pooled and reused. There are other implementations like CachedConnectionProvider which lazily creates and caches connections or simply ConnectionProvider if you want a new connection each time something requires one.]]></description>
+            <parameters>
+                <parameter name="host">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="user">
+                    <description><![CDATA[Username used to connect with the mail server.]]></description>
+                </parameter>
+                <parameter name="password">
+                    <description><![CDATA[Username password to connect with the mail server.]]></description>
+                </parameter>
+                <parameter name="port">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="reconnection">
+                    <description><![CDATA[When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy]]></description>
+                </parameter>
+                <parameter name="poolingProfile">
+                    <description><![CDATA[Characteristics of the connection pool]]></description>
+                </parameter>
+            </parameters>
+        </connection>
+    </connections>
+    <extension name="Basic">
+        <description><![CDATA[This is the main class of an extension, is the entry point from which configurations, connection providers, operations and sources are going to be declared.]]></description>
+        <parameters/>
+    </extension>
+    <operations>
+        <operation name="listImap">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="mailboxFolder">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="pageSize">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="page">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="mail">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="folderName">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="index">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="send">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="payload">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="reconnectionStrategy">
+                    <description><![CDATA[A retry strategy in case of connectivity errors]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="test">
+            <description><![CDATA[Example of an operation that uses the configuration and a connection instance to perform some action.]]></description>
+            <parameters>
+                <parameter name="metricName">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+        <operation name="testBis">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="metricName">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="target">
+                    <description><![CDATA[The name of a variable on which the operation's output will be placed]]></description>
+                </parameter>
+                <parameter name="targetValue">
+                    <description><![CDATA[An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable]]></description>
+                </parameter>
+            </parameters>
+        </operation>
+    </operations>
+    <sources/>
+    <types>
+        <type name="org.mule.extension.internal.dto.MailInfo">
+            <description><![CDATA[]]></description>
+            <parameters>
+                <parameter name="from">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="id">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="payload">
+                    <description><![CDATA[]]></description>
+                </parameter>
+                <parameter name="subject">
+                    <description><![CDATA[]]></description>
+                </parameter>
+            </parameters>
+        </type>
+    </types>
+</extension-documentation>
