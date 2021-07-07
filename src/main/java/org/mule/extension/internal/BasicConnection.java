@@ -33,10 +33,6 @@ public final class BasicConnection {
 	private Folder folder;
 	protected final Session session;
 
-	public static void main(String[] args) {
-		new BasicConnection("francisco.nery@softvision.com","bephcptslwyvnwkn","smtp.gmail.com","465",null);
-	}
-	
 	/**
 	 * Creates a new instance of the of the {@link MailboxConnection} secured by TLS.
 	 *
